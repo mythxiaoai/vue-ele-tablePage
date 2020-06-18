@@ -44,7 +44,9 @@
       </el-form>
     </slot>
 
-    <slot name="toolbar"></slot>
+    <div class="top-btn-wrap">
+      <slot name="toolbar"></slot>
+    </div>
 
     <!--表格-->
     <el-table
@@ -161,8 +163,7 @@ let page = {
 };
 export default {
   name: "XTable",
-  created() {
-  },
+  created() {},
   props: {
     search: {
       type: Object
@@ -307,5 +308,9 @@ function deepClone(target, datajson) {
 }
 </script>
 
-<style>
+
+<style scoped>
+.top-btn-wrap {
+  margin-bottom: 10px;
+}
 </style>

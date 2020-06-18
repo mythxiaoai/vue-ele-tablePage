@@ -1,6 +1,14 @@
 <template>
   <div id="app">
     <x-table ref="xtable" v-bind="tableConfig" @current-change="currentChange">
+      <template #toolbar>
+        <el-button-group>
+          <el-button icon="el-icon-plus">新增</el-button>
+          <el-button icon="el-icon-download">导出二维码</el-button>
+          <el-button icon="el-icon-delete">删除</el-button>
+          <el-button icon="el-icon-download">导出表格</el-button>
+        </el-button-group>
+      </template>
       <template #after>
         <el-table-column fixed="right" label="操作" width="100">
           <template slot-scope="scope">
@@ -38,7 +46,6 @@ export default {
       console.log("触发部门-重置");
       this.$refs.xtable.setSearch("useOrgId", "");
     };
-
   },
   data() {
     return {
